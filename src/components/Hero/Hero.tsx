@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <header className="relative flex min-h-screen flex-col overflow-hidden text-white">
       <Image
-        src="/images/mountain-view-hike.jpeg"
+        src="/images/hero/mountain-view-hike.jpeg"
         alt="Hikers overlooking a mountain valley"
         fill
         priority
