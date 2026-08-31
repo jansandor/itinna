@@ -1,9 +1,25 @@
-import { Hero } from "@/components";
+import {
+  Explore,
+  FinalCta,
+  ForCreators,
+  Hero,
+  HowItWorks,
+  MeetCreators,
+} from "@/components";
+import { Footer } from "@/components/Footer";
 
 export default async function HomePage() {
   return (
-    <main>
+    <>
       <Hero />
-    </main>
+      <main>
+        <Explore />
+        <MeetCreators />
+        <HowItWorks />
+        <ForCreators />
+        <FinalCta />
+      </main>
+      <Footer />
+    </>
   );
 }

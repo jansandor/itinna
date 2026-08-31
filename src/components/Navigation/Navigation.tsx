@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { CloseIcon, MenuIcon } from "./components";
 import { useDisclose } from "@/hooks";
-import { ROUTE } from "@/routes";
-import { NAV_LINKS } from "./constants";
+import { ROUTE } from "@/const/routes";
+import { NAV_LINKS } from "./const";
 
 const handleLogoClick = () => {
   globalThis?.scrollTo({ top: 0, behavior: "smooth" });
@@ -22,17 +22,17 @@ export const Navigation = () => {
   };
 
   return (
-    <header className="absolute inset-x-0 top-0 z-20">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
+    <section className="font-body absolute inset-x-0 top-0 z-20">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
         <Link
-          href=""
+          href={ROUTE.HOME}
           className="text-lg font-semibold tracking-tight text-white"
           onClick={handleLogoClick}
         >
           itinna
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -42,7 +42,7 @@ export const Navigation = () => {
               {link.label}
             </a>
           ))}
-        </nav>
+        </div>
 
         <Link
           href={ROUTE.EXPLORE_GUIDES}
@@ -60,10 +60,10 @@ export const Navigation = () => {
         >
           {isOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
-      </div>
+      </nav>
 
       {isOpen && (
-        <div className="mx-4 mb-4 flex flex-col gap-1 rounded-2xl bg-black/80 p-4 backdrop-blur-sm md:hidden">
+        <nav className="mx-4 mb-4 flex flex-col gap-1 rounded-2xl bg-black/80 p-4 backdrop-blur-sm md:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
@@ -81,8 +81,8 @@ export const Navigation = () => {
           >
             Explore guides
           </Link>
-        </div>
+        </nav>
       )}
-    </header>
+    </section>
   );
 };
