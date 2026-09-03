@@ -2,23 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePrefersReducedMotion } from "@/hooks";
-import {
-  HERO_VIDEO_DISPLAY_DURATION_RANGE_MS,
-  HERO_VIDEO_TRANSITION_DURATION_MS,
-} from "../const";
-import {
-  BASE_CLASS,
-  FRONT_CLASS,
-  LayerIndex,
-  otherLayer,
-  randomDurationMs,
-} from "./utils";
+import { HERO_VIDEO_TRANSITION_DURATION_MS } from "../const";
+import { BASE_CLASS, FRONT_CLASS, LayerIndex, otherLayer } from "./utils";
 
-type Props = {
+interface HeroVideoBackgroundProps {
   sources: string[];
-};
+}
 
-export const HeroVideoBackground = ({ sources }: Props) => {
+export const HeroVideoBackground = ({ sources }: HeroVideoBackgroundProps) => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const videoRef0 = useRef<HTMLVideoElement>(null);
   const videoRef1 = useRef<HTMLVideoElement>(null);
@@ -85,7 +76,7 @@ export const HeroVideoBackground = ({ sources }: Props) => {
 
           scheduleSwap();
         }, HERO_VIDEO_TRANSITION_DURATION_MS);
-      }, randomDurationMs(HERO_VIDEO_DISPLAY_DURATION_RANGE_MS));
+      }, 7000);
     };
 
     scheduleSwap();

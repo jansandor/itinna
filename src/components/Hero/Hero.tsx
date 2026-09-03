@@ -10,7 +10,6 @@ export const Hero = () => {
   return (
     <header className="relative flex min-h-screen flex-col overflow-hidden text-white">
       <HeroVideoBackground sources={videoSources} />
-      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/50" />
 
       <Navigation />
 
