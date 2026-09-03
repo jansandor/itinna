@@ -3,6 +3,47 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --font-size-display: 48px;
+  --font-size-display-leading: 56px;
+
+  --font-size-heading: 36px;
+  --font-size-heading-leading: 42px;
+
+  --font-size-title: 22px;
+  --font-size-title-leading: 28px;
+
+  --font-size-body: 16px;
+  --font-size-body-leading: 24px;
+
+  --font-size-small: 14px;
+  --font-size-small-leading: 20px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-display: 64px;
+    --font-size-display-leading: 68px;
+
+    --font-size-heading: 44px;
+    --font-size-heading-leading: 50px;
+
+    --font-size-title: 24px;
+    --font-size-title-leading: 30px;
+
+    --font-size-body: 18px;
+    --font-size-body-leading: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-size-display: 80px;
+    --font-size-display-leading: 84px;
+
+    --font-size-heading: 56px;
+    --font-size-heading-leading: 62px;
+  }
 }
 
 @theme inline {
@@ -12,13 +53,21 @@
   --font-heading: var(--font-manrope);
   --font-body: var(--font-dm-sans);
   --font-editorial: var(--font-lora);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --text-display: var(--font-size-display);
+  --text-display--line-height: var(--font-size-display-leading);
+
+  --text-heading: var(--font-size-heading);
+  --text-heading--line-height: var(--font-size-heading-leading);
+
+  --text-title: var(--font-size-title);
+  --text-title--line-height: var(--font-size-title-leading);
+
+  --text-body: var(--font-size-body);
+  --text-body--line-height: var(--font-size-body-leading);
+
+  --text-small: var(--font-size-small);
+  --text-small--line-height: var(--font-size-small-leading);
 }
 
 body {
