@@ -12,7 +12,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <main>
+      <main className="mx-auto max-w-6xl">
         <Explore />
         <MeetCreators />
         <HowItWorks />
