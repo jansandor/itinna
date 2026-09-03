@@ -66,7 +66,41 @@ Implement the homepage as the following ordered sections (`src/app/page.tsx`). E
 - **Photography carries emotion.** Large, high-quality destination photography (hero, guide cards, creator portraits) is the primary way the product feels like travel rather than software.
 - **Product UI carries credibility.** Map/pin UI layered over or alongside photography (hero, guide cards) signals "this is a real, working product," not just a marketing site.
 - **Creator imagery is personal.** Creator cards should read as portraits of real people, distinct in tone from the more "destination-first" guide cards.
-- **No invented visual system.** Do not invent specific color palettes, typography scales, spacing tokens, or a design system beyond what's already reflected in the existing Tailwind setup and components ([src/app/globals.css](src/app/globals.css), [src/components](src/components)) or explicitly stated in `homepage.md`. Extend the existing look consistently rather than introducing a new one.
+
+### Typography
+
+Use the predefined typography tokens from [src/app/globals.css](src/app/globals.css). Do not introduce arbitrary font sizes when an existing token satisfies the requirement.
+
+| Token          |  Mobile |  Tablet | Desktop | Use for                                       |
+| -------------- | ------: | ------: | ------: | --------------------------------------------- |
+| `text-display` | 48 / 56 | 64 / 68 | 80 / 84 | Hero headline / primary page statement        |
+| `text-heading` | 36 / 42 | 44 / 50 | 56 / 62 | Main section headings (`h2`)                  |
+| `text-title`   | 22 / 28 | 24 / 30 | 24 / 30 | Card titles, guide names, creator names, `h3` |
+| `text-body`    | 16 / 24 | 18 / 28 | 18 / 28 | Body copy, descriptions, supporting text      |
+| `text-small`   | 14 / 20 | 14 / 20 | 14 / 20 | Metadata, labels, secondary information       |
+
+Values are `font-size / line-height` in pixels.
+
+- Use `text-display` only for the main hero headline.
+- Use `text-heading` for major section headings.
+- Use `text-title` for card titles, guide names, creator names, and smaller headings.
+- Use `text-body` for paragraphs, descriptions, and supporting text.
+- Use `text-small` for metadata, labels, locations, dates, counts, and other secondary information.
+- Navigation items and buttons use `16px` text and do not require a separate typography token.
+- Prefer the existing typography tokens over arbitrary Tailwind sizes such as `text-[17px]` or `text-[32px]`.
+- Do not manually add responsive font-size classes when an existing typography token already provides the required responsive behavior.
+
+### Font families
+
+- `font-heading` — Manrope. Use for headings, titles, and prominent UI text.
+- `font-body` — DM Sans. Use for body copy, navigation, metadata, and supporting text.
+- `font-editorial` — Lora. Use sparingly for editorial/accent copy where a serif treatment is appropriate.
+
+### Font weights
+
+Use Tailwind's standard `font-normal`, `font-medium`, `font-semibold`, `font-bold`, and `font-extrabold` utilities. Prefer `font-heading` with `font-semibold` / `font-bold` for headings and `font-body` for regular content.
+
+- **No invented visual system.** Do not invent specific color palettes, spacing tokens, or additional design-system rules beyond what's already reflected in the existing Tailwind setup and components ([src/app/globals.css](src/app/globals.css), [src/components](src/components)) or explicitly stated in `homepage.md`. Extend the existing look consistently rather than introducing a new one.
 
 ---
 
