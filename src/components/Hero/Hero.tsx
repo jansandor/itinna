@@ -9,12 +9,8 @@ export const Hero = () => {
 
   return (
     <header className="relative flex min-h-screen flex-col overflow-hidden text-white">
-      <div className="absolute inset-x-0 top-0 z-15 h-32 bg-linear-to-b from-black/70 via-black/30 to-transparent" />
-
       <HeroVideoBackground sources={videoSources} />
-
       <Navigation />
-
       <div className="relative z-10 mx-56 my-auto flex max-w-6xl flex-col gap-8 px-8 py-32 sm:px-12 lg:px-24">
         <h1 className="font-heading text-display max-w-3xl font-bold tracking-tight text-balance">
           Discover places worth the trip.
