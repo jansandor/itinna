@@ -26,7 +26,7 @@ export const Navigation = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
         <Link
           href={ROUTE.HOME}
-          className="text-lg font-semibold tracking-tight text-white"
+          className="text-title font-semibold tracking-tight text-white"
           onClick={handleLogoClick}
         >
           itinna
@@ -37,7 +37,7 @@ export const Navigation = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/90 transition hover:text-white"
+              className="text-body font-medium text-white/90 transition hover:text-white"
             >
               {link.label}
             </a>
@@ -46,7 +46,7 @@ export const Navigation = () => {
 
         <Link
           href={ROUTE.EXPLORE_GUIDES}
-          className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-medium text-neutral-900 transition hover:bg-white/90 md:inline-flex"
+          className="text-small hidden rounded-full bg-white px-5 py-2.5 font-medium text-neutral-900 transition hover:bg-white/90 md:inline-flex"
         >
           Explore guides
         </Link>
@@ -69,7 +69,7 @@ export const Navigation = () => {
               key={link.href}
               href={link.href}
               onClick={handleCloseMenu}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-white/90 transition hover:bg-white/10"
+              className="text-body rounded-lg px-3 py-2 font-medium text-white/90 transition hover:bg-white/10"
             >
               {link.label}
             </a>
@@ -77,7 +77,7 @@ export const Navigation = () => {
           <Link
             href={ROUTE.EXPLORE_GUIDES}
             onClick={handleCloseMenu}
-            className="mt-2 rounded-full bg-white px-4 py-2 text-center text-sm font-medium text-neutral-900 transition hover:bg-white/90"
+            className="text-small mt-2 rounded-full bg-white px-4 py-2 text-center font-medium text-neutral-900 transition hover:bg-white/90"
           >
             Explore guides
           </Link>
