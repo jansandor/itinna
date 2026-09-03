@@ -20,7 +20,19 @@ export const Hero = () => {
           Discover places worth the trip.
         </h1>
         <p className="font-editorial text-title max-w-md text-white/80">
-          Hand-picked travel guides from people who know the places best.
+          {/* 
+          Alternative 1
+          Hand-picked travel guides from people who know the places best. 
+          */}
+          {/* 
+          Alternative 2
+          Discover hand-picked places and experiences recommended by people who
+          know them best. Take their guides with you, explore offline, and
+          follow their recommendations at your own pace.
+          */}
+          Discover hand-picked places and experiences recommended by people who
+          know them best. Take their guides with you, use them offline, and
+          explore at your own pace.
         </p>
         <Link
           href={ROUTE.EXPLORE_GUIDES}
