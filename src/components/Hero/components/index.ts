@@ -1,0 +1,1 @@
+export { HeroVideoBackground } from "./HeroVideoBackground";

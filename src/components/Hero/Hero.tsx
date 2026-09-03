@@ -1,20 +1,16 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "../Navigation";
 import { ROUTE } from "@/const/routes";
+import { HeroVideoBackground } from "./components";
+import { getHeroVideoSources } from "./utils";
 
 export const Hero = () => {
+  const videoSources = getHeroVideoSources();
+
   return (
     <header className="relative flex min-h-screen flex-col overflow-hidden text-white">
-      <Image
-        src="/images/hero/mountain-view-hike.jpeg"
-        alt="Hikers overlooking a mountain valley"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover"
-      />
-      {/* <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/50" /> */}
+      <HeroVideoBackground sources={videoSources} />
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-black/50" />
 
       <Navigation />
 
