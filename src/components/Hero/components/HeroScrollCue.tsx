@@ -1,10 +1,11 @@
 import { SECTION } from "@/const";
 
-// Staggered per-chevron delay creates the sequential, downward-flowing fade.
+// Each chevron delays by 1/3 of the animation duration (2.4s), so only one is
+// ever near its bright peak at a time — a highlight traveling top to bottom.
 const CHEVRONS = [
   { id: "chevron-1", delayClassName: "[animation-delay:0ms]" },
-  { id: "chevron-2", delayClassName: "[animation-delay:200ms]" },
-  { id: "chevron-3", delayClassName: "[animation-delay:400ms]" },
+  { id: "chevron-2", delayClassName: "[animation-delay:800ms]" },
+  { id: "chevron-3", delayClassName: "[animation-delay:1600ms]" },
 ] as const;
 
 export const HeroScrollCue = () => {
@@ -14,7 +15,7 @@ export const HeroScrollCue = () => {
       aria-label="Scroll to explore guides"
       className="absolute inset-x-0 bottom-8 z-10 mx-auto flex w-fit flex-col items-center gap-2 text-white/80 transition hover:text-white sm:bottom-10"
     >
-      <span className="text-small font-medium tracking-widest uppercase">
+      <span className="text-small font-body font-medium tracking-widest uppercase">
         Explore
       </span>
       <span className="flex flex-col items-center gap-1">
