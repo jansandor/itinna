@@ -22,7 +22,7 @@ export const Navigation = () => {
   };
 
   return (
-    <section className="font-body absolute inset-x-0 top-0 z-20 h-28 bg-linear-to-b from-black/70 via-black/30 to-transparent">
+    <section className="font-body absolute inset-x-0 top-0 z-20 h-24 bg-linear-to-b from-black/45 via-black/15 to-transparent">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
         <Link
           href={ROUTE.HOME}
