@@ -28,9 +28,9 @@ export const Hero = () => {
           know them best. Take their guides with you, explore offline, and
           follow their recommendations at your own pace.
           */}
-            Discover hand-picked places and experiences recommended by people
-            who know them best. Take their guides with you, use them offline,
-            and explore at your own pace.
+            Hand-picked places and experiences recommended by people who know
+            them best. Take their guides with you, use them offline, and explore
+            at your own pace.
           </p>
           <Link
             href={ROUTE.EXPLORE_GUIDES}
