@@ -21,7 +21,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Itinna",
+  title: "Itinna | Discover places worth the trip",
   description:
     "A platform for travelers and creators to share their experiences and guides.",
 };

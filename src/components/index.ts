@@ -1,5 +1,6 @@
 export { Hero } from "./Hero";
 export { Navigation } from "./Navigation";
+export { GlassBox } from "./GlassBox";
 export { Explore } from "./Explore";
 export { HowItWorks } from "./HowItWorks";
 export { ForCreators } from "./ForCreators";
