@@ -9,7 +9,7 @@ interface GlassBoxProps {
 export const GlassBox = ({ children, className = "" }: GlassBoxProps) => {
   return (
     <div
-      className={`rounded-3xl border border-white/15 bg-white/10 shadow-lg shadow-black/10 backdrop-blur-xl ${className}`}
+      className={`rounded-3xl border border-white/10 bg-white/5 shadow-lg shadow-black/5 backdrop-blur-md ${className}`}
     >
       {children}
     </div>
