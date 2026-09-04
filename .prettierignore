@@ -7,3 +7,6 @@ build
 pnpm-lock.yaml
 .gitignore
 next-env.d.ts
+screens
+inspiration
+public
