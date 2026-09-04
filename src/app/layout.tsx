@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora, Manrope } from "next/font/google";
+import { ScrollbarActivity } from "@/components";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -32,6 +33,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       <body
         className={`flex min-h-full flex-col ${manrope.variable} ${dmSans.variable} ${lora.variable}`}
       >
+        <ScrollbarActivity />
         {children}
       </body>
     </html>

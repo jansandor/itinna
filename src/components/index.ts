@@ -7,3 +7,4 @@ export { ForCreators } from "./ForCreators";
 export { MeetCreators } from "./MeetCreators";
 export { FinalCta } from "./FinalCta";
 export { Footer } from "./Footer";
+export { ScrollbarActivity } from "./ScrollbarActivity";
