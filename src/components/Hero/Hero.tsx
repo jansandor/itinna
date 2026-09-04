@@ -12,8 +12,8 @@ export const Hero = () => {
     <header className="relative flex min-h-screen flex-col overflow-hidden text-white">
       <HeroVideoBackground sources={videoSources} />
       <Navigation />
-      <div className="relative z-10 mx-56 my-auto flex max-w-6xl flex-col">
-        <GlassBox className="flex flex-col gap-8 px-4 py-20 sm:px-12 lg:px-20">
+      <div className="relative z-10 mx-56 my-auto flex max-w-240 flex-col">
+        <GlassBox className="flex flex-col gap-8 px-4 py-16 sm:px-12 lg:px-16">
           <h1 className="font-heading text-display max-w-3xl font-bold tracking-tight text-balance">
             Discover places worth the trip.
           </h1>
@@ -34,7 +34,7 @@ export const Hero = () => {
           </p>
           <Link
             href={ROUTE.EXPLORE_GUIDES}
-            className="text-small ml-10 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-neutral-900 transition hover:bg-white/90"
+            className="text-body ml-10 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 font-medium text-neutral-900 transition hover:bg-white/90"
           >
             Explore guides
           </Link>
