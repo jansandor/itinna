@@ -68,6 +68,20 @@
 
   --text-small: var(--font-size-small);
   --text-small--line-height: var(--font-size-small-leading);
+
+  --animate-hero-chevron-fade: hero-chevron-fade 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-chevron-fade {
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 body {

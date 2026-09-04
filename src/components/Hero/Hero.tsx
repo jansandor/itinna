@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Navigation } from "../Navigation";
 import { GlassBox } from "../GlassBox";
 import { ROUTE } from "@/const/routes";
-import { HeroVideoBackground } from "./components";
+import { HeroScrollCue, HeroVideoBackground } from "./components";
 import { getHeroVideoSources } from "./utils";
 
 export const Hero = () => {
@@ -40,6 +40,7 @@ export const Hero = () => {
           </Link>
         </GlassBox>
       </div>
+      <HeroScrollCue />
     </header>
   );
 };
