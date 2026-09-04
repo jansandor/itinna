@@ -91,34 +91,14 @@ body {
 }
 
 /*
- * Scrollbar is invisible by default and only fades into view while the
- * user is actively scrolling (`.is-scrolling`, toggled by
- * useScrollbarActivity). Native scrolling itself is untouched.
+ * Native scrollbar never reserves layout space. A custom overlay thumb
+ * (ScrollbarActivity) fades in while scrolling and out shortly after —
+ * see the component for the fade timing. Native scrolling is untouched.
  */
 html {
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
-  transition: scrollbar-color 0.4s ease;
-}
-
-html.is-scrolling {
-  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-width: none;
 }
 
 html::-webkit-scrollbar {
-  width: 8px;
-}
-
-html::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-html::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 9999px;
-  transition: background-color 0.4s ease;
-}
-
-html.is-scrolling::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.35);
+  display: none;
 }
