@@ -2,10 +2,13 @@ import { SECTION } from "@/const";
 
 // Each chevron delays by 1/3 of the animation duration (2.4s), so only one is
 // ever near its bright peak at a time — a highlight traveling top to bottom.
+// Delay is set inline (not via a Tailwind class) because the `animate-*`
+// utility applies `animation` as a shorthand, which would otherwise reset
+// a class-based `animation-delay` back to 0 depending on CSS source order.
 const CHEVRONS = [
-  { id: "chevron-1", delayClassName: "[animation-delay:0ms]" },
-  { id: "chevron-2", delayClassName: "[animation-delay:800ms]" },
-  { id: "chevron-3", delayClassName: "[animation-delay:1600ms]" },
+  { id: "chevron-1", style: { animationDelay: "0ms" } },
+  { id: "chevron-2", style: { animationDelay: "1200ms" } },
+  { id: "chevron-3", style: { animationDelay: "2400ms" } },
 ] as const;
 
 export const HeroScrollCue = () => {
@@ -27,7 +30,8 @@ export const HeroScrollCue = () => {
             viewBox="0 0 20 10"
             fill="none"
             aria-hidden="true"
-            className={`motion-safe:animate-hero-chevron-fade ${chevron.delayClassName}`}
+            className="motion-safe:animate-hero-chevron-fade"
+            style={chevron.style}
           >
             <path
               d="M1.5 1.5L10 8.5L18.5 1.5"
