@@ -9,7 +9,7 @@ interface RevealTextProps {
 }
 
 const DEFAULT_STAGGER_MS = 40;
-const DEFAULT_DURATION_MS = 600;
+const DEFAULT_DURATION_MS = 800;
 
 // Text rests at white/80. Once `active`, each word briefly pulses to full
 // white and back via a CSS animation, staggered per word so the pulses

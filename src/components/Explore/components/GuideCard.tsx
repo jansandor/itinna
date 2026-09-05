@@ -13,6 +13,7 @@ export const GuideCard = ({ image, alt }: GuideCardProps) => {
           fill
           sizes="(min-width: 1024px) 300px, 80vw"
           className="object-cover object-center motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-out motion-safe:group-hover:scale-110"
+          loading="eager"
         />
       </div>
       <div className="flex flex-col gap-8 pt-8 pl-8">
