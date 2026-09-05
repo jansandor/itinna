@@ -10,11 +10,21 @@ import { GUIDE_CARDS } from "./data";
 // well past its top edge — not the moment it first peeks into view.
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 
+// image → content → image → content → image → content, left to right, each
+// step landing before the next one starts so the sequence reads as one
+// continuous reveal rather than six independent animations.
+const CARD_REVEAL_DELAYS_MS = [
+  { image: 0, content: 180 },
+  { image: 400, content: 580 },
+  { image: 800, content: 980 },
+] as const;
+
 export const Explore = () => {
   const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>(
     0,
     SWEEP_TRIGGER_ROOT_MARGIN,
   );
+  const [cardsRef, cardsInView] = useInViewOnce<HTMLDivElement>();
 
   return (
     <section ref={sectionRef} id={SECTION.EXPLORE} className="py-16">
@@ -24,7 +34,10 @@ export const Explore = () => {
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
-      <div className="flex flex-wrap items-start justify-between gap-x-8 gap-y-16">
+      <div
+        ref={cardsRef}
+        className="flex flex-wrap items-start justify-between gap-x-8 gap-y-16"
+      >
         {GUIDE_CARDS.map((card, index) => (
           <GuideCard
             key={card.id}
@@ -33,6 +46,9 @@ export const Explore = () => {
             // only once the cards actually sit in one row (lg+); when they
             // wrap onto their own lines the offset would look accidental.
             className={index === 1 ? "lg:mt-28" : undefined}
+            revealActive={cardsInView}
+            imageRevealDelayMs={CARD_REVEAL_DELAYS_MS[index].image}
+            contentRevealDelayMs={CARD_REVEAL_DELAYS_MS[index].content}
           />
         ))}
       </div>
