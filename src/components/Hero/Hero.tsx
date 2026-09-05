@@ -16,7 +16,7 @@ export const Hero = () => {
     >
       <HeroVideoBackground sources={videoSources} />
       <Navigation />
-      <div className="relative z-30 mx-56 my-auto flex max-w-240 flex-col">
+      <div className="relative z-10 mx-56 my-auto flex max-w-240 flex-col">
         <GlassBox className="flex flex-col gap-8 px-4 py-16 sm:px-12 lg:px-16">
           <h1 className="font-heading text-display max-w-3xl font-bold tracking-tight text-balance">
             Discover places worth the trip.
