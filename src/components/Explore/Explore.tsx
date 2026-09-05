@@ -10,13 +10,18 @@ import { GUIDE_CARDS } from "./data";
 // well past its top edge — not the moment it first peeks into view.
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 
+// Crops the bottom 60% of the viewport, so the card grid only counts as
+// "entered" once its top has scrolled up into the upper-middle of the
+// screen — the user is already looking at the cards, not just their edge.
+const CARDS_TRIGGER_ROOT_MARGIN = "0px 0px -60% 0px";
+
 // image → content → image → content → image → content, left to right, each
 // step landing before the next one starts so the sequence reads as one
 // continuous reveal rather than six independent animations.
 const CARD_REVEAL_DELAYS_MS = [
-  { image: 0, content: 300 },
-  { image: 600, content: 900 },
-  { image: 1200, content: 1500 },
+  { image: 0, content: 180 },
+  { image: 600, content: 780 },
+  { image: 1200, content: 1380 },
 ] as const;
 
 export const Explore = () => {
@@ -24,7 +29,10 @@ export const Explore = () => {
     0,
     SWEEP_TRIGGER_ROOT_MARGIN,
   );
-  const [cardsRef, cardsInView] = useInViewOnce<HTMLDivElement>();
+  const [cardsRef, cardsInView] = useInViewOnce<HTMLDivElement>(
+    0,
+    CARDS_TRIGGER_ROOT_MARGIN,
+  );
 
   return (
     <section ref={sectionRef} id={SECTION.EXPLORE} className="py-16">
