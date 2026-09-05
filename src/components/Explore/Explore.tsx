@@ -14,9 +14,9 @@ const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 // step landing before the next one starts so the sequence reads as one
 // continuous reveal rather than six independent animations.
 const CARD_REVEAL_DELAYS_MS = [
-  { image: 0, content: 180 },
-  { image: 400, content: 580 },
-  { image: 800, content: 980 },
+  { image: 0, content: 300 },
+  { image: 600, content: 900 },
+  { image: 1200, content: 1500 },
 ] as const;
 
 export const Explore = () => {

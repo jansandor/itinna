@@ -9,7 +9,7 @@ interface RevealOnEnterProps {
   children: ReactNode;
 }
 
-const DEFAULT_DURATION_MS = 700;
+const DEFAULT_DURATION_MS = 800;
 
 // Fades + slides `children` up into its final position once `active` flips
 // true. Being a transition (not a keyframe animation), it settles there and
