@@ -30,7 +30,7 @@ export const RevealText = ({
       {words.map((word, index) => (
         <span
           key={`${word}-${index}`}
-          className={`transition-colors ${revealed ? "text-white" : "text-white/80"}`}
+          className={`transition-colors duration-2000 ${revealed ? "text-white/80" : "text-white"}`}
           style={
             prefersReducedMotion
               ? undefined
