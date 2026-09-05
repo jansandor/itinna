@@ -26,7 +26,7 @@ export const Navigation = () => {
 
   return (
     <section
-      className={`font-body fixed inset-x-0 top-0 z-20 transition-[height,background-color,border-color,backdrop-filter] duration-600 ${isScrolled ? "h-18.5 border-white/10 bg-black/5 backdrop-blur-sm" : "h-24 border-transparent bg-linear-to-b from-black/45 via-black/15 to-transparent backdrop-blur-none"}`}
+      className={`font-body fixed inset-x-0 top-0 z-20 transition-[height,background-color,backdrop-filter] duration-600 ${isScrolled ? "h-18.5 bg-black/5 backdrop-blur-sm" : "h-24 bg-linear-to-b from-black/45 via-black/15 to-transparent backdrop-blur-none"}`}
     >
       <nav
         className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-[padding] duration-600 ${isScrolled ? "py-4" : "py-6"} sm:px-10 lg:px-16`}
