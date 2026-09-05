@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { GUIDE_CARD_FEATURES, type GuideCardData } from "../data";
 
-type GuideCardProps = GuideCardData;
+type GuideCardProps = GuideCardData & { className?: string };
 
-export const GuideCard = ({ image, alt }: GuideCardProps) => {
+export const GuideCard = ({ image, alt, className = "" }: GuideCardProps) => {
   return (
-    <div className="flex w-full max-w-90 flex-col">
+    <div className={`flex w-full max-w-90 flex-col ${className}`}>
       <div className="group relative h-150 w-full overflow-hidden rounded-3xl">
         <Image
           src={image}

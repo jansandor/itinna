@@ -25,8 +25,15 @@ export const Explore = () => {
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
       <div className="flex flex-wrap items-start justify-between gap-x-8 gap-y-16">
-        {GUIDE_CARDS.map((card) => (
-          <GuideCard key={card.id} {...card} />
+        {GUIDE_CARDS.map((card, index) => (
+          <GuideCard
+            key={card.id}
+            {...card}
+            // Middle card sits lower for an editorial staggered rhythm, but
+            // only once the cards actually sit in one row (lg+); when they
+            // wrap onto their own lines the offset would look accidental.
+            className={index === 1 ? "lg:mt-28" : undefined}
+          />
         ))}
       </div>
     </section>
