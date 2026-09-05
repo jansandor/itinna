@@ -2,7 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 // Tracks whether an element has ever entered the viewport, then stops
 // observing — the returned flag latches `true` and never resets on re-entry.
-export const useInViewOnce = <T extends Element>(threshold: number = 0.2) => {
+export const useInViewOnce = <T extends Element>(
+  threshold: number = 0.2,
+  rootMargin: string = "0px",
+) => {
   const ref = useRef<T>(null);
   const [hasEntered, setHasEntered] = useState(false);
 
@@ -18,12 +21,12 @@ export const useInViewOnce = <T extends Element>(threshold: number = 0.2) => {
           observer.disconnect();
         }
       },
-      { threshold },
+      { threshold, rootMargin },
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [hasEntered, threshold]);
+  }, [hasEntered, threshold, rootMargin]);
 
   return [ref, hasEntered] as const;
 };

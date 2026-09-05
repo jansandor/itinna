@@ -5,8 +5,16 @@ import { useInViewOnce } from "@/hooks";
 import { GuideCard, RevealText } from "./components";
 import { GUIDE_CARDS } from "./data";
 
+// rootMargin crops the bottom 75% of the viewport out of the intersection
+// check, so the section only counts as "entered" once the user has scrolled
+// well past its top edge — not the moment it first peeks into view.
+const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
+
 export const Explore = () => {
-  const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>();
+  const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>(
+    0,
+    SWEEP_TRIGGER_ROOT_MARGIN,
+  );
 
   return (
     <section ref={sectionRef} id={SECTION.EXPLORE} className="py-16">
