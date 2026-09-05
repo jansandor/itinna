@@ -1,11 +1,4 @@
-import {
-  Explore,
-  FinalCta,
-  ForCreators,
-  Hero,
-  HowItWorks,
-  MeetCreators,
-} from "@/components";
+import { Explore, FinalCta, ForCreators, Hero, HowItWorks } from "@/components";
 import { Footer } from "@/components/Footer";
 
 export default async function HomePage() {
@@ -14,7 +7,8 @@ export default async function HomePage() {
       <Hero />
       <main className="mx-auto flex w-full max-w-7xl flex-col">
         <Explore />
-        <MeetCreators />
+        {/* // TODO tell them */}
+        {/* <MeetCreators /> */}
         <HowItWorks />
         <ForCreators />
         <FinalCta />
