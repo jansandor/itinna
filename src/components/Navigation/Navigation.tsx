@@ -47,7 +47,7 @@ export const Navigation = () => {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             href={ROUTE.LOG_IN}
-            className="text-small inline-flex rounded-full border border-white/25 bg-white/10 px-5 py-2.5 font-medium text-white backdrop-blur-sm transition hover:border-white/35 hover:bg-white/15"
+            className="text-small inline-flex rounded-full border border-white/10 bg-black/5 px-5 py-2.5 font-medium text-white backdrop-blur-sm transition hover:bg-black/10"
           >
             Log in
           </Link>
@@ -86,7 +86,7 @@ export const Navigation = () => {
           <Link
             href={ROUTE.LOG_IN}
             onClick={handleCloseMenu}
-            className="text-small mt-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-center font-medium text-white backdrop-blur-sm transition hover:border-white/35 hover:bg-white/15"
+            className="text-small mt-2 rounded-full border border-white/10 bg-black/5 px-4 py-2 text-center font-medium text-white backdrop-blur-sm transition hover:bg-black/10"
           >
             Log in
           </Link>
