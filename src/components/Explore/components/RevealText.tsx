@@ -8,12 +8,14 @@ interface RevealTextProps {
   durationMs?: number;
 }
 
-const DEFAULT_STAGGER_MS = 40;
-const DEFAULT_DURATION_MS = 400;
+const DEFAULT_STAGGER_MS = 110;
+const DEFAULT_DURATION_MS = 1100;
 
-// Splits `text` into words that fade from white/80 to white one by one, like
-// a light sweeping left to right. `active` starts the sweep; once a word has
-// brightened it stays that way — the effect never reverses or replays.
+// Text rests at white/80. Once `active`, each word briefly pulses to full
+// white and back via a CSS animation, staggered per word so the pulses
+// overlap and read as one beam sweeping left to right. Animations (unlike
+// transitions) play exactly once and don't need to be undone afterwards, so
+// the sweep can never replay on re-entry.
 export const RevealText = ({
   text,
   active,
@@ -22,7 +24,7 @@ export const RevealText = ({
   durationMs = DEFAULT_DURATION_MS,
 }: RevealTextProps) => {
   const prefersReducedMotion = usePrefersReducedMotion();
-  const revealed = active || prefersReducedMotion;
+  const sweep = active && !prefersReducedMotion;
   const words = text.split(" ");
 
   return (
@@ -30,14 +32,14 @@ export const RevealText = ({
       {words.map((word, index) => (
         <span
           key={`${word}-${index}`}
-          className={`transition-colors duration-2000 ${revealed ? "text-white/80" : "text-white"}`}
+          className={`text-white/80 ${sweep ? "motion-safe:animate-explore-word-sweep" : ""}`}
           style={
-            prefersReducedMotion
-              ? undefined
-              : {
-                  transitionDelay: `${index * staggerMs}ms`,
-                  transitionDuration: `${durationMs}ms`,
+            sweep
+              ? {
+                  animationDelay: `${index * staggerMs}ms`,
+                  animationDuration: `${durationMs}ms`,
                 }
+              : undefined
           }
         >
           {word}

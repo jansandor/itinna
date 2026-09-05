@@ -70,6 +70,7 @@
   --text-small--line-height: var(--font-size-small-leading);
 
   --animate-hero-chevron-fade: hero-chevron-fade 3.6s ease-in-out infinite;
+  --animate-explore-word-sweep: explore-word-sweep 600ms ease-in-out;
 }
 
 @keyframes hero-chevron-fade {
@@ -81,6 +82,20 @@
 
   50% {
     opacity: 1;
+  }
+}
+
+/* Brightens to full white then settles back to white/80 — a single pulse
+ * used with a per-word animation-delay stagger to read as one light sweep. */
+@keyframes explore-word-sweep {
+
+  0%,
+  100% {
+    color: rgb(255 255 255 / 0.8);
+  }
+
+  50% {
+    color: rgb(255 255 255 / 1);
   }
 }
 
