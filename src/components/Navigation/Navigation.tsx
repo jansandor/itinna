@@ -2,56 +2,28 @@
 
 import Link from "next/link";
 import { CloseIcon, MenuIcon } from "./components";
-import { useDisclose, useScrollProgress } from "@/hooks";
+import { useDisclose, useHasScrolledPast } from "@/hooks";
 import { ROUTE } from "@/const/routes";
 import {
-  GLASS_BACKGROUND_ALPHA,
-  GLASS_BLUR_PX,
-  NAV_HEIGHT_COMPACT_PX,
-  NAV_HEIGHT_HERO_PX,
   NAV_LINKS,
-  NAV_PADDING_Y_COMPACT_PX,
-  NAV_PADDING_Y_HERO_PX,
-  SCROLL_TRANSITION_RANGE_PX,
+  SCROLL_TRIGGER_HYSTERESIS_PX,
+  SCROLL_TRIGGER_PX,
 } from "./const";
 
 const handleLogoClick = () => {
   globalThis?.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-const lerp = (from: number, to: number, progress: number) =>
-  from + (to - from) * progress;
-
 export const Navigation = () => {
   const { isOpen, onClose, onToggle } = useDisclose();
-  // The navbar is a single, always-mounted, fixed element; its height,
-  // padding, glass background/blur and Hero gradient are all driven by the
-  // same continuous scroll progress, instead of an on/off boolean switch.
-  const scrollProgress = useScrollProgress(SCROLL_TRANSITION_RANGE_PX);
-
-  const heightPx = lerp(
-    NAV_HEIGHT_HERO_PX,
-    NAV_HEIGHT_COMPACT_PX,
-    scrollProgress,
+  // The navbar is a single, always-mounted, fixed element; only its visual
+  // treatment (glass background/compact sizing) changes once scrolling
+  // passes the trigger threshold — a normal CSS transition, not a
+  // continuous scroll-linked animation.
+  const isScrolled = useHasScrolledPast(
+    SCROLL_TRIGGER_PX,
+    SCROLL_TRIGGER_HYSTERESIS_PX,
   );
-  const paddingYPx = lerp(
-    NAV_PADDING_Y_HERO_PX,
-    NAV_PADDING_Y_COMPACT_PX,
-    scrollProgress,
-  );
-  const backdropFilter = `blur(${GLASS_BLUR_PX * scrollProgress}px)`;
-
-  const sectionStyle = {
-    height: `${heightPx}px`,
-    backgroundColor: `rgba(0, 0, 0, ${GLASS_BACKGROUND_ALPHA * scrollProgress})`,
-    backdropFilter,
-    WebkitBackdropFilter: backdropFilter,
-  };
-  const gradientStyle = { opacity: 1 - scrollProgress };
-  const navStyle = {
-    paddingTop: `${paddingYPx}px`,
-    paddingBottom: `${paddingYPx}px`,
-  };
 
   const handleCloseMenu = () => {
     onClose();
@@ -63,19 +35,17 @@ export const Navigation = () => {
 
   return (
     <section
-      style={sectionStyle}
-      className="font-body fixed inset-x-0 top-0 z-20"
+      className={`font-body fixed inset-x-0 top-0 z-20 transition-[height,background-color,backdrop-filter] duration-600 ${isScrolled ? "h-18.5 bg-black/5 backdrop-blur-sm" : "h-24 backdrop-blur-none"}`}
     >
-      {/* Hero-only gradient, faded out over the same scroll range as the glass. */}
+      {/* Hero-only gradient, its own layer so it can fade via opacity
+      instead of the background being swapped abruptly. */}
       <div
         aria-hidden="true"
-        style={gradientStyle}
-        className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/45 via-black/15 to-transparent"
+        className={`pointer-events-none absolute inset-0 bg-linear-to-b from-black/45 via-black/15 to-transparent transition-opacity duration-600 ${isScrolled ? "opacity-0" : "opacity-100"}`}
       />
 
       <nav
-        style={navStyle}
-        className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-16"
+        className={`relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 transition-[padding] duration-600 ${isScrolled ? "py-4" : "py-6"} sm:px-10 lg:px-16`}
       >
         <Link
           href={ROUTE.HOME}
