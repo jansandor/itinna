@@ -12,7 +12,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <main className="mx-auto max-w-6xl">
+      <main className="mx-auto flex w-full max-w-6xl flex-col">
         <Explore />
         <MeetCreators />
         <HowItWorks />

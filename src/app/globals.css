@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #171717;
+  --background: #000000;
   --foreground: #ffffff;
 
   --font-size-display: 48px;
@@ -73,6 +73,7 @@
 }
 
 @keyframes hero-chevron-fade {
+
   0%,
   100% {
     opacity: 0.15;
@@ -96,6 +97,8 @@ body {
  */
 html {
   scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: 74px;
 }
 
 html::-webkit-scrollbar {

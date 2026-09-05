@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body
-        className={`flex min-h-full flex-col ${manrope.variable} ${dmSans.variable} ${lora.variable}`}
+        className={`${manrope.variable} ${dmSans.variable} ${lora.variable}`}
       >
         <ScrollbarActivity />
         {children}
