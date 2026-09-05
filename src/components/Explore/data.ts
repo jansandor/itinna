@@ -87,13 +87,13 @@ export const GUIDE_CARDS: GuideCardData[] = [
   },
   {
     id: "guide-2",
-    image: "/images/explore/guide-detail-card-2-img.png",
+    image: "/images/explore/guide-detail-phone-transparent.png",
     alt: "Phone showing a guide's detail screen with featured places, held up in a Lisbon alleyway",
     features: GUIDE_DETAIL_FEATURES,
   },
   {
     id: "guide-3",
-    image: "/images/explore/itinerary-card-3-img.png",
+    image: "/images/explore/itinerary-phone-transparent.png",
     alt: "Phone showing a day-by-day itinerary with a route map, held up against a Lisbon sunset",
     features: ITINERARY_FEATURES,
   },
