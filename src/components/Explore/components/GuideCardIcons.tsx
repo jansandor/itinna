@@ -63,9 +63,9 @@ export const CalendarIcon = (props: SVGProps<SVGSVGElement>) => (
 
 export const RouteIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg {...defaultProps} {...props}>
-    <circle cx="6" cy="18" r="2" />
-    <circle cx="17.5" cy="6.5" r="2.3" />
-    <path d="M7.4 16.6 11 13 15.7 13 15.7 8" />
+    <circle cx="7" cy="18" r="2.2" />
+    <circle cx="17" cy="7.5" r="2" />
+    <path d="M7 15.8V12H17V9.5" />
   </svg>
 );
 
