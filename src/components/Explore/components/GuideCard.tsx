@@ -6,13 +6,13 @@ type GuideCardProps = GuideCardData;
 export const GuideCard = ({ image, alt }: GuideCardProps) => {
   return (
     <div className="flex w-full max-w-90 flex-col">
-      <div className="relative h-150 w-full overflow-hidden rounded-3xl">
+      <div className="group relative h-150 w-full overflow-hidden rounded-3xl">
         <Image
           src={image}
           alt={alt}
           fill
           sizes="(min-width: 1024px) 300px, 80vw"
-          className="object-cover object-center"
+          className="object-cover object-center motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-out motion-safe:group-hover:scale-110"
         />
       </div>
       <div className="flex flex-col gap-8 pt-8 pl-8">
