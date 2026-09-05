@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GUIDE_CARD_FEATURES, type GuideCardData } from "../data";
+import type { GuideCardData } from "../data";
 import { RevealOnEnter } from "./RevealOnEnter";
 
 type GuideCardProps = GuideCardData & {
@@ -12,6 +12,7 @@ type GuideCardProps = GuideCardData & {
 export const GuideCard = ({
   image,
   alt,
+  features,
   className = "",
   revealActive = true,
   imageRevealDelayMs = 0,
@@ -33,7 +34,7 @@ export const GuideCard = ({
       </RevealOnEnter>
       <RevealOnEnter active={revealActive} delayMs={contentRevealDelayMs}>
         <div className="flex flex-col gap-8 pt-8 pl-8">
-          {GUIDE_CARD_FEATURES.map(({ icon: Icon, title, subtitle }) => (
+          {features.map(({ icon: Icon, title, subtitle }) => (
             <div key={title} className="flex items-center gap-4">
               <Icon className="h-8 w-8 shrink-0 text-white" />
               <div className="flex flex-col">
