@@ -1,3 +1,3 @@
 export { useDisclose } from "./useDisclose";
-export { useIsElementInView } from "./useIsElementInView";
+export { useHasScrolledPast } from "./useHasScrolledPast";
 export { usePrefersReducedMotion } from "./usePrefersReducedMotion";

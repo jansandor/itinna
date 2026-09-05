@@ -1,7 +1,8 @@
 import { SECTION } from "@/const";
 
-// Keep in sync with the `h-24` class on the navbar.
-export const NAV_HEIGHT_PX = 96;
+// How far the user must scroll before the navbar switches to its compact
+// glass state. Small enough that the transition starts almost immediately.
+export const SCROLL_TRIGGER_PX = 8;
 
 export const NAV_LINKS = [
   { label: "Explore", href: `#${SECTION.EXPLORE}` },

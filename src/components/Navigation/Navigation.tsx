@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { CloseIcon, MenuIcon } from "./components";
-import { useDisclose, useIsElementInView } from "@/hooks";
+import { useDisclose, useHasScrolledPast } from "@/hooks";
 import { ROUTE } from "@/const/routes";
-import { SECTION } from "@/const";
-import { NAV_HEIGHT_PX, NAV_LINKS } from "./const";
+import { SCROLL_TRIGGER_PX, NAV_LINKS } from "./const";
 
 const handleLogoClick = () => {
   globalThis?.scrollTo({ top: 0, behavior: "smooth" });
@@ -14,9 +13,8 @@ const handleLogoClick = () => {
 export const Navigation = () => {
   const { isOpen, onClose, onToggle } = useDisclose();
   // The navbar is a single, always-mounted, fixed element; only its visual
-  // treatment (background/text) changes once the Hero is no longer in view.
-  const isHeroInView = useIsElementInView(SECTION.HERO, NAV_HEIGHT_PX);
-  const isScrolled = !isHeroInView;
+  // treatment (glass background/compact sizing) changes once scrolling starts.
+  const isScrolled = useHasScrolledPast(SCROLL_TRIGGER_PX);
 
   const handleCloseMenu = () => {
     onClose();
@@ -28,7 +26,7 @@ export const Navigation = () => {
 
   return (
     <section
-      className={`font-body fixed inset-x-0 top-0 z-20 transition duration-300 ${isScrolled ? "h-18.5 bg-black/5 backdrop-blur-sm" : "h-24 bg-linear-to-b from-black/45 via-black/15 to-transparent"}`}
+      className={`font-body fixed inset-x-0 top-0 z-20 transition-[height,background-color,border-color,backdrop-filter] duration-600 ${isScrolled ? "h-18.5 border-white/10 bg-black/5 backdrop-blur-sm" : "h-24 border-transparent bg-linear-to-b from-black/45 via-black/15 to-transparent backdrop-blur-none"}`}
     >
       <nav
         className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-[padding] duration-600 ${isScrolled ? "py-4" : "py-6"} sm:px-10 lg:px-16`}

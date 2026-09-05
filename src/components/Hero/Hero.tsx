@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Navigation } from "../Navigation";
 import { GlassBox } from "../GlassBox";
 import { ROUTE } from "@/const/routes";
-import { SECTION } from "@/const";
 import { HeroScrollCue, HeroVideoBackground } from "./components";
 import { getHeroVideoSources } from "./utils";
 
@@ -10,10 +9,7 @@ export const Hero = () => {
   const videoSources = getHeroVideoSources();
 
   return (
-    <header
-      id={SECTION.HERO}
-      className="relative flex min-h-screen flex-col overflow-hidden text-white"
-    >
+    <header className="relative flex min-h-screen flex-col overflow-hidden text-white">
       <HeroVideoBackground sources={videoSources} />
       <Navigation />
       <div className="relative z-10 mx-56 my-auto flex max-w-240 flex-col">
