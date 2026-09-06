@@ -109,9 +109,9 @@ Odpovídá na otázku "Můžu tomu věřit?".
 
 Zacíleno na Cestovatele i Tvůrce.
 
-Vynecháno pro běžnost na všech možných pages =D
-
 Designově bych zase zkusil glass efekt - 3 karty.
+
+Tato sekce je k diskuzi, jestli ano / ne.
 
 ## KPIs
 
