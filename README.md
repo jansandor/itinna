@@ -108,13 +108,29 @@ Odpovídá na otázku "Můžu tomu věřit?".
 
 Zacíleno na Cestovatele i Tvůrce.
 
+Vynecháno pro běžnost na všech možných pages =D
+
+Designově bych zase zkusil glass efekt - 3 karty.
+
 ## KPIs
+
+?
+
+Pokud by byly, dal bych asi max 3 karty:
+
+- počet users/travelers/creators
+- počet guides
+- ...
+
+Design outline bílá, čáry, číslo - jednoduše, nenápadně, decentně. Nic křiklavého.
 
 ## Get The App
 
 Odpovídá na otázku "Jak to můžu získat?".
 
 Zacíleno na Cestovatele i Tvůrce.
+
+Sekce čistě s odkazy na stažení. Title a subtitle, pokud vůbec (ať je to konzistentní napříč page)
 
 ## Final CTA
 
@@ -125,6 +141,8 @@ Zacíleno na Cestovatele i Tvůrce.
 Call to action otevřít marketplace.
 
 ## Footer
+
+Klasika.
 
 # How to run project
 
