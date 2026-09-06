@@ -6,8 +6,16 @@ import { FeedStack } from "./components";
 
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 
-// Placeholder feed content shared by every card for now — each will get
-// its own image/video and details once real creator content is wired up.
+const FINAL_CTA_VIDEOS = [
+  "/images/final-cta/16755499_2160_3840_30fps.mp4",
+  "/images/final-cta/12981816_1080_1920_30fps.mp4",
+  "/images/final-cta/18444530-hd_1080_1920_30fps.mp4",
+  "/images/final-cta/12519412_1080_1920_60fps.mp4",
+  "/images/final-cta/14281390_2160_3840_30fps.mp4",
+];
+
+// Placeholder creator/caption content shared by every card for now — each
+// will get its own details once real creator content is wired up.
 const FEED_CARD = {
   imageSrc: "/images/for-creators/for-creators.png",
   imageAlt: "Traveler filming a mountain view for a guide",
@@ -22,8 +30,8 @@ const FEED_CARD = {
   saves: "4.8K",
 };
 
-const FEED_CARDS = ["card-1", "card-2", "card-3", "card-4", "card-5"].map(
-  (id) => Object.assign({ id }, FEED_CARD),
+const FEED_CARDS = FINAL_CTA_VIDEOS.map((videoSrc, index) =>
+  Object.assign({ id: `card-${index + 1}`, videoSrc }, FEED_CARD),
 );
 
 export const FinalCta = () => {

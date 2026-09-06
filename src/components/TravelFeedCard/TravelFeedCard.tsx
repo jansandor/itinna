@@ -10,6 +10,7 @@ import {
 export interface TravelFeedCardProps {
   imageSrc: string;
   imageAlt: string;
+  videoSrc?: string;
   creatorName: string;
   creatorAvatarSrc: string;
   creatorAvatarAlt: string;
@@ -28,6 +29,7 @@ export interface TravelFeedCardProps {
 export const TravelFeedCard = ({
   imageSrc,
   imageAlt,
+  videoSrc,
   creatorName,
   creatorAvatarSrc,
   creatorAvatarAlt,
@@ -43,13 +45,27 @@ export const TravelFeedCard = ({
     <div
       className={`relative aspect-9/16 w-full max-w-200 overflow-hidden rounded-[2.5rem] ${className}`}
     >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        sizes="(min-width: 1024px) 800px, 90vw"
-        className="object-cover object-center"
-      />
+      {videoSrc ? (
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          src={videoSrc}
+          poster={imageSrc}
+          aria-label={imageAlt}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+      ) : (
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          sizes="(min-width: 1024px) 800px, 90vw"
+          className="object-cover object-center"
+        />
+      )}
       {/* Localized to the bottom third only, so the image itself stays bright and unfiltered */}
       <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-black/80" />
 
