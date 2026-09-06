@@ -33,7 +33,7 @@ export const HowItWorksColumn = ({
           <li key={stepTitle}>
             <OutlineCard
               icon={
-                <span className="text-title font-body flex h-8 w-8 shrink-0 items-center justify-center font-semibold text-white">
+                <span className="text-title font-body flex h-8 w-8 shrink-0 items-center justify-center font-semibold text-white/75">
                   {index + 1}
                 </span>
               }
