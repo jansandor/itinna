@@ -71,6 +71,7 @@
 
   --animate-hero-chevron-fade: hero-chevron-fade 3.6s ease-in-out infinite;
   --animate-explore-word-sweep: explore-word-sweep 600ms ease-in-out;
+  --animate-outline-subtitle-sweep: outline-subtitle-sweep 800ms ease-in-out;
 }
 
 @keyframes hero-chevron-fade {
@@ -92,6 +93,21 @@
   0%,
   100% {
     color: rgb(255 255 255 / 0.8);
+  }
+
+  50% {
+    color: rgb(255 255 255 / 1);
+  }
+}
+
+/* Same one-time pulse-to-white-and-back sweep as explore-word-sweep, tuned
+ * to OutlineCard's muted white/65 subtitle so the rest state doesn't snap
+ * to a brighter color before the hover animation plays. */
+@keyframes outline-subtitle-sweep {
+
+  0%,
+  100% {
+    color: rgb(255 255 255 / 0.65);
   }
 
   50% {
