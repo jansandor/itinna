@@ -22,7 +22,7 @@ export const Reviews = () => {
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+      <div className="grid grid-cols-1 gap-6 py-12 lg:grid-cols-3 lg:gap-8">
         {REVIEWS.map((review) => (
           <ReviewCard key={review.id} {...review} />
         ))}

@@ -46,9 +46,11 @@ export const ReviewCard = ({
             className="object-cover object-center"
           />
         </div>
-        <div className="flex flex-col gap-0.5">
-          <p className="text-body font-body font-semibold text-white">{name}</p>
-          <p className="text-small font-body font-normal text-white/65">
+        <div className="flex flex-col">
+          <p className="text-body font-body text-[18px] font-semibold text-white">
+            {name}
+          </p>
+          <p className="text-body font-body font-normal text-white/65">
             {meta}
           </p>
         </div>
