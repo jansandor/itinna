@@ -31,7 +31,7 @@ export const HowItWorks = () => {
             below, not tied to either column's actual content height. */}
         <div
           aria-hidden
-          className="absolute top-[30%] bottom-[21%] left-1/2 hidden w-px -translate-x-1/2 bg-white/55 lg:block"
+          className="absolute top-[20%] bottom-[10%] left-1/2 hidden w-px -translate-x-1/2 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.4)_15%,rgba(255,255,255,0.9)_50%,rgba(255,255,255,0.4)_85%,transparent_100%)] lg:block"
         />
         {/* Starts roughly a third into the travelers column so the two
             steps lists read as staggered rather than aligned. */}
