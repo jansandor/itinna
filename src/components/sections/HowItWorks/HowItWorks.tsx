@@ -22,9 +22,9 @@ export const HowItWorks = () => {
       <RevealText
         text="One app, two sides of the journey."
         active={hasEntered}
-        className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
+        className="text-title font-body pb-20 pl-6 font-normal tracking-wide"
       />
-      <div className="relative flex flex-col gap-16 lg:flex-row lg:items-start lg:gap-12">
+      <div className="relative flex flex-col justify-between gap-16 lg:flex-row lg:items-start lg:gap-12">
         <HowItWorksColumn {...TRAVELER_COLUMN} className="lg:flex-1" />
         {/* Divider spans only the middle stretch between the two columns'
             midpoints — its offsets are derived from the lg:mt-56 stagger

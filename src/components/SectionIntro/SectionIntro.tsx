@@ -14,14 +14,14 @@ export const SectionIntro = ({
   className = "",
 }: SectionIntroProps) => {
   return (
-    <div className={`flex flex-col gap-4 ${className}`}>
-      <p className="text-small font-body font-medium tracking-[0.15em] text-white/50 uppercase">
+    <div className={`flex flex-col ${className}`}>
+      <p className="text-body font-body mb-3 font-semibold tracking-widest text-white/55 uppercase">
         {label}
       </p>
-      <h3 className="text-heading font-heading font-semibold whitespace-pre-line text-white">
+      <h3 className="text-heading font-heading mb-3 text-[40px] leading-11 font-semibold whitespace-pre-line text-white">
         {title}
       </h3>
-      <p className="text-body font-body font-normal text-white/65">
+      <p className="text-title font-body text-[20px] font-light text-white/65">
         {subtitle}
       </p>
     </div>

@@ -26,7 +26,7 @@ export const HowItWorksColumn = ({
   className = "",
 }: HowItWorksColumnProps) => {
   return (
-    <div className={`flex flex-col gap-10 ${className}`}>
+    <div className={`flex max-w-150 flex-col gap-10 ${className}`}>
       <SectionIntro label={label} title={title} subtitle={subtitle} />
       <ol className="flex list-none flex-col gap-4">
         {steps.map(
