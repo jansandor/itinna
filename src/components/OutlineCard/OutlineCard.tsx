@@ -1,4 +1,6 @@
-import type { JSX } from "react";
+"use client";
+
+import { useState, type JSX } from "react";
 
 interface OutlineCardProps {
   title: string;
@@ -24,10 +26,18 @@ export const OutlineCard = ({
 }: OutlineCardProps) => {
   const isLarge = size === "large";
   const subtitleWords = subtitle.split(" ");
+  // Hover only triggers the sweep; it doesn't control its lifetime. Each
+  // mouse enter bumps this counter, which remounts the spans below under a
+  // fresh key so the CSS animation restarts and then plays to completion on
+  // its own, even if the cursor leaves before it finishes.
+  const [sweepCount, setSweepCount] = useState(0);
 
   return (
     <div
-      className={`flex items-center gap-4 rounded-2xl bg-transparent px-6 py-5 ${bordered ? "group border border-white/35" : ""} ${className}`}
+      className={`flex items-center gap-4 rounded-2xl bg-transparent px-6 py-5 ${bordered ? "border border-white/35" : ""} ${className}`}
+      onMouseEnter={
+        bordered ? () => setSweepCount((count) => count + 1) : undefined
+      }
     >
       {icon}
       <div className={`flex flex-col ${isLarge ? "gap-1" : "gap-0.5"}`}>
@@ -40,12 +50,14 @@ export const OutlineCard = ({
           className={`text-body font-body font-normal text-white/65 ${isLarge ? "text-[18px] leading-6 tracking-wide" : ""}`}
         >
           {bordered
-            ? // CSS restarts the animation each time :hover is (re)matched,
-              // so the sweep replays on every hover without any JS state.
-              subtitleWords.map((word, index) => (
+            ? subtitleWords.map((word, index) => (
                 <span
-                  key={`${word}-${index}`}
-                  className="motion-safe:group-hover:animate-outline-subtitle-sweep"
+                  key={`${sweepCount}-${word}-${index}`}
+                  className={
+                    sweepCount > 0
+                      ? "motion-safe:animate-outline-subtitle-sweep"
+                      : undefined
+                  }
                   style={{ animationDelay: `${index * SWEEP_STAGGER_MS}ms` }}
                 >
                   {word}
