@@ -41,6 +41,7 @@ export const ForCreators = () => {
               title={title}
               subtitle={subtitle}
               bordered={false}
+              size="large"
             />
           ))}
         </div>
