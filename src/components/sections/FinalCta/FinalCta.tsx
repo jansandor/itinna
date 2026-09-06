@@ -39,7 +39,7 @@ export const FinalCta = () => {
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
-      <div className="flex flex-col items-center gap-8 py-12">
+      <div className="flex flex-col items-center gap-20 py-24">
         {FEED_CARD_IDS.map((id) => (
           <TravelFeedCard key={id} {...FEED_CARD} />
         ))}
