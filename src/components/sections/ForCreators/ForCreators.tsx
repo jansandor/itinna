@@ -36,7 +36,12 @@ export const ForCreators = () => {
         </div>
         <div className="flex flex-col gap-6 lg:basis-1/3 lg:justify-center">
           {VALUE_PROPS.map(({ title, subtitle }) => (
-            <OutlineCard key={title} title={title} subtitle={subtitle} />
+            <OutlineCard
+              key={title}
+              title={title}
+              subtitle={subtitle}
+              bordered={false}
+            />
           ))}
         </div>
       </div>

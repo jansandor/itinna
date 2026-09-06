@@ -5,6 +5,7 @@ interface OutlineCardProps {
   subtitle: string;
   icon?: JSX.Element;
   className?: string;
+  bordered?: boolean;
 }
 
 // Bordered, transparent row for feature/step lists — same visual language
@@ -15,10 +16,11 @@ export const OutlineCard = ({
   subtitle,
   icon,
   className = "",
+  bordered = true,
 }: OutlineCardProps) => {
   return (
     <div
-      className={`flex items-center gap-4 rounded-2xl border border-white/35 bg-transparent px-6 py-5 ${className}`}
+      className={`flex items-center gap-4 rounded-2xl bg-transparent px-6 py-5 ${bordered ? "border border-white/35" : ""} ${className}`}
     >
       {icon}
       <div className="flex flex-col gap-0.5">
