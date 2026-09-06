@@ -22,6 +22,10 @@ const WHEEL_DELTA_THRESHOLD = 12;
 const SWIPE_DISTANCE_THRESHOLD = 40;
 // Fallback lock duration for browsers without a `scrollend` event.
 const SNAP_FALLBACK_DURATION_MS = 900;
+// Nudges the resting scroll position slightly past the slide's top edge so
+// each card settles a little higher in the viewport — a small gap above it,
+// more room left below — instead of landing dead-center.
+const SNAP_OFFSET_PX = -24;
 
 // Full-screen, one-card-per-gesture feed (TikTok/Reels-style): while a
 // slide is snapped fully into view, wheel/touch input advances directly to
@@ -45,7 +49,9 @@ export const FeedStack = ({ cards }: FeedStackProps) => {
 
     activeIndexRef.current = index;
     isSnappingRef.current = true;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const targetTop =
+      window.scrollY + target.getBoundingClientRect().top + SNAP_OFFSET_PX;
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
 
     clearTimeout(snapTimeoutRef.current);
     snapTimeoutRef.current = setTimeout(() => {
