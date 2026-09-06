@@ -18,7 +18,7 @@ export const HowItWorks = () => {
         How It Works
       </h2>
       <RevealText
-        text="How does Itinna work?"
+        text="One app, two sides of the journey."
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
