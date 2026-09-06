@@ -2,8 +2,9 @@
 
 import { SECTION } from "@/const";
 import { useInViewOnce } from "@/hooks";
-import { GuideCard, RevealText } from "./components";
+import { GuideCard } from "./components";
 import { GUIDE_CARDS } from "./data";
+import { RevealText } from "@/components";
 
 // rootMargin crops the bottom 75% of the viewport out of the intersection
 // check, so the section only counts as "entered" once the user has scrolled

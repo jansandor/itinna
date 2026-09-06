@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 
 // Tracks whether an element has ever entered the viewport, then stops

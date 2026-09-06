@@ -1,0 +1,8 @@
+export { Hero } from "./Hero";
+export { Navigation } from "./Navigation";
+export { Explore } from "./Explore";
+export { HowItWorks } from "./HowItWorks";
+export { MeetCreators } from "./MeetCreators";
+export { ForCreators } from "./ForCreators";
+export { FinalCta } from "./FinalCta";
+export { Footer } from "./Footer";

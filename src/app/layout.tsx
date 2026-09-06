@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora, Manrope } from "next/font/google";
-import { ScrollbarActivity } from "@/components";
 import "./globals.css";
+import { ScrollbarActivity } from "@/components";
 
 const manrope = Manrope({
   variable: "--font-manrope",

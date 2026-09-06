@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 // Boolean scroll-past-threshold state with hysteresis: crosses to `true`

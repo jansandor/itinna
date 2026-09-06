@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Navigation } from "../Navigation";
-import { GlassBox } from "../GlassBox";
 import { ROUTE } from "@/const/routes";
-import { HeroScrollCue, HeroVideoBackground } from "./components";
 import { getHeroVideoSources } from "./utils";
+import { Navigation } from "../Navigation";
+import { GlassBox } from "@/components";
+import { HeroScrollCue, HeroVideoBackground } from "./components";
 
 export const Hero = () => {
   const videoSources = getHeroVideoSources();

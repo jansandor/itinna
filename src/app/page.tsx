@@ -1,5 +1,11 @@
-import { Explore, FinalCta, ForCreators, Hero, HowItWorks } from "@/components";
-import { Footer } from "@/components/Footer";
+import {
+  Explore,
+  FinalCta,
+  Footer,
+  ForCreators,
+  Hero,
+  HowItWorks,
+} from "@/components/sections";
 
 export default async function HomePage() {
   return (
