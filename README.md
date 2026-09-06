@@ -86,11 +86,21 @@ Odpovídá na otázku "Jak to funguje?".
 
 Zacíleno na Cestovatele i Tvůrce.
 
+Nastiňuje oběma cílovým skupinám jak Itinna pro každou z nich funguje.
+
+Sekce obsahuje dva sloupce For Travelers a For Creators asymetricky vertikálně posunuté, aby flow stránky zleva doprava a shora dolů nejprve nabídla info cestovatelům a behěm chvíle i tvůrcům, ale ne vedle sebe, aby to celkově působilo vzdušně a elementz si vzájemně nekradli pozornost návštěvníka. Sloupce a položky seznamů se objevují postupně podobně jako obsah sekce Explore.
+
+Hover přes kartičky spouští decentní light sweep efekt přes drobný, světlejší text, aby i tato sekce poskytla nějakou vtahující interaktivitu, jelikož neobsahuje žádný výraznější grafický element / obrázek.
+
 ## For Creators
 
 Odpovídá na otázku "Proč bych tam měl publikovat/používat to jako tvůrce - travel influencer?".
 
 Zacíleno na Tvůrce.
+
+Vysvětluje stručně přidanou hodnotu Itinna pro tvůrce.
+
+Možnost přidat CTA "Create guide" -> registrace nebo dokonce nechat návštěvníka projít si flow pro přidání guide a na konci, abz proces mohl dokončit vynutit registraci - návštěvník si tak už zkusí na vlastní kůži, jak to funguje a protože už do tvorby guide vloží úsilí, bude mít daleko větší motivaci se na konci flow registrovat, aby neztratil investici.
 
 ## Reviews
 
