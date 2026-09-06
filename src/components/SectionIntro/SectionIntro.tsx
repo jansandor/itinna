@@ -15,7 +15,7 @@ export const SectionIntro = ({
 }: SectionIntroProps) => {
   return (
     <div className={`flex flex-col ${className}`}>
-      <p className="text-body font-body mb-3 font-semibold tracking-widest text-white/55 uppercase">
+      <p className="text-body font-body mb-3 font-semibold tracking-widest text-white/45 uppercase">
         {label}
       </p>
       <h3 className="text-heading font-heading mb-3 text-[40px] leading-11 font-semibold whitespace-pre-line text-white">
