@@ -6,11 +6,11 @@ import { useInViewOnce } from "@/hooks";
 import { HowItWorksColumn } from "./components";
 import { CREATOR_COLUMN, TRAVELER_COLUMN } from "./data";
 
-const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
+const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -45% 0px";
 
 // Creators column starts its reveal sequence slightly after the Travelers
 // column's, so the two feel choreographed rather than simultaneous.
-const CREATORS_START_DELAY_MS = 220;
+const CREATORS_START_DELAY_MS = 500;
 
 export const HowItWorks = () => {
   const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>(
