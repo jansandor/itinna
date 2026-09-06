@@ -1,7 +1,8 @@
 "use client";
 
-import { RevealText } from "@/components";
+import { ReviewCard, RevealText } from "@/components";
 import { useInViewOnce } from "@/hooks";
+import { REVIEWS } from "./data";
 
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 
@@ -21,6 +22,11 @@ export const Reviews = () => {
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
+        {REVIEWS.map((review) => (
+          <ReviewCard key={review.id} {...review} />
+        ))}
+      </div>
     </section>
   );
 };
