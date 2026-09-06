@@ -81,7 +81,7 @@ export interface GuideCardData {
 export const GUIDE_CARDS: GuideCardData[] = [
   {
     id: "guide-1",
-    image: "/images/explore/map-card-img.png",
+    image: "/images/explore/map-card-img.png", // Use map-card-img-polarsteps.png ???
     alt: "Phone showing an interactive map guide held up against the Tre Cime di Lavaredo peaks in the Dolomites",
     features: EXPLORE_FEATURES,
   },
