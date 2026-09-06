@@ -25,13 +25,13 @@ export const ForCreators = () => {
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
       <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
-        <div className="relative h-80 w-full overflow-hidden rounded-3xl sm:h-96 lg:h-auto lg:flex-1">
+        <div className="group relative h-80 w-full overflow-hidden rounded-3xl sm:h-96 lg:h-auto lg:flex-1">
           <Image
             src="/images/for-creators/for-creators.png"
             alt="A creator photographing a coastal mountain view for a guide"
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover object-center"
+            className="object-cover object-center motion-safe:transition-transform motion-safe:duration-600 motion-safe:ease-out motion-safe:group-hover:scale-110"
           />
         </div>
         <div className="flex flex-col justify-between gap-6 lg:flex-1">
