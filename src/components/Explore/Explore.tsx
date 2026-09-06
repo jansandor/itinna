@@ -13,7 +13,7 @@ const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 // Crops the bottom 60% of the viewport, so the card grid only counts as
 // "entered" once its top has scrolled up into the upper-middle of the
 // screen — the user is already looking at the cards, not just their edge.
-const CARDS_TRIGGER_ROOT_MARGIN = "0px 0px -60% 0px";
+const CARDS_TRIGGER_ROOT_MARGIN = "0px 0px -25% 0px";
 
 // image → content → image → content → image → content, left to right, each
 // step landing before the next one starts so the sequence reads as one
