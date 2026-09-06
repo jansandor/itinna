@@ -35,7 +35,7 @@ export const HowItWorks = () => {
         />
         {/* Starts roughly a third into the travelers column so the two
             steps lists read as staggered rather than aligned. */}
-        <HowItWorksColumn {...CREATOR_COLUMN} className="lg:mt-56 lg:flex-1" />
+        <HowItWorksColumn {...CREATOR_COLUMN} className="lg:mt-125 lg:flex-1" />
       </div>
     </section>
   );
