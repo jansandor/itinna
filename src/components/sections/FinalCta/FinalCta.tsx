@@ -1,9 +1,27 @@
 "use client";
 
-import { RevealText } from "@/components";
+import { RevealText, TravelFeedCard } from "@/components";
 import { useInViewOnce } from "@/hooks";
 
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
+
+// Placeholder feed content shared by every card for now — each will get
+// its own image/video and details once real creator content is wired up.
+const FEED_CARD = {
+  imageSrc: "/images/for-creators/for-creators.png",
+  imageAlt: "Traveler filming a mountain view for a guide",
+  creatorName: "Maya Thompson",
+  creatorAvatarSrc: "/images/reviews/maya-thompson.png",
+  creatorAvatarAlt: "Portrait of Maya Thompson",
+  location: "Dolomites · Italy",
+  caption: "A place that feels unreal 🏔️",
+  hashtags: ["dolomites", "hiking", "nature"],
+  likes: "15.2K",
+  comments: "301",
+  saves: "4.8K",
+};
+
+const FEED_CARD_IDS = ["card-1", "card-2", "card-3", "card-4", "card-5"];
 
 export const FinalCta = () => {
   const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>(
@@ -21,6 +39,11 @@ export const FinalCta = () => {
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
+      <div className="flex flex-col items-center gap-8 py-12">
+        {FEED_CARD_IDS.map((id) => (
+          <TravelFeedCard key={id} {...FEED_CARD} />
+        ))}
+      </div>
     </section>
   );
 };
