@@ -16,6 +16,7 @@
 - Decentní interaktivní prvky a animace. Záměrně se animace spouští pouze jednou ve vhodnou chvíli (nebo fungují na hover) pro vtahující efekt a chytnutí pozornosti návštěvníka.
 - Chtěl jsem se vyhnout animacím a přechodům kompletně závislým/krokovaným přes scroll, protože mi to přijde iritující, pokud potřebuju rychle vyhledat informace na stránce a "proletět ji" - takové animace závislé na scrollu používá např. [Polarsteps](https://www.polarsteps.com/) nebo [Maps.me](https://maps.me/app/) a moc to nefeeluju.
 - From left to right light sweep efekt na podtitulcích sekcí. Spouští se jednou po zascrollování a "odkrytí" dostatečně velké části sekce (např. na textu "Everything you need for a better trip, in one place.")
+- **Možná zkusit dát do středu title + subtitle sekcí**
 
 # Sekce
 

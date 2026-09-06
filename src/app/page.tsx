@@ -5,6 +5,7 @@ import {
   ForCreators,
   Hero,
   HowItWorks,
+  Reviews,
 } from "@/components/sections";
 
 export default async function HomePage() {
@@ -17,6 +18,7 @@ export default async function HomePage() {
         {/* <MeetCreators /> */}
         <HowItWorks />
         <ForCreators />
+        <Reviews />
         <FinalCta />
       </main>
       <Footer />

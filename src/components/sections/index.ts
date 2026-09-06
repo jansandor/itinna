@@ -6,3 +6,4 @@ export { MeetCreators } from "./MeetCreators";
 export { ForCreators } from "./ForCreators";
 export { FinalCta } from "./FinalCta";
 export { Footer } from "./Footer";
+export { Reviews } from "./Reviews";

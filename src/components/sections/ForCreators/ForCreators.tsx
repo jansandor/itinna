@@ -25,7 +25,7 @@ export const ForCreators = () => {
         For Creators
       </h2>
       <RevealText
-        text="You know the place. We help you share it."
+        text="You know the places. We help you share it."
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
