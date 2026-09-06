@@ -18,7 +18,7 @@ export const SectionIntro = ({
       <p className="text-body font-body mb-3 font-semibold tracking-widest text-white/45 uppercase">
         {label}
       </p>
-      <h3 className="text-heading font-heading mb-3 text-[40px] leading-11 font-semibold whitespace-pre-line text-white">
+      <h3 className="text-heading font-heading mb-3 text-[40px] leading-12 font-semibold whitespace-pre-line text-white">
         {title}
       </h3>
       <p className="text-title font-body text-[20px] font-light text-white/65">
