@@ -14,10 +14,10 @@ export const FinalCta = () => {
   return (
     <section ref={sectionRef} className="py-16">
       <h2 className="text-display font-heading mb-8 font-semibold">
-        Final CTA
+        Where will you go next?
       </h2>
       <RevealText
-        text="Where will you go next?"
+        text="Find your next adventure."
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
