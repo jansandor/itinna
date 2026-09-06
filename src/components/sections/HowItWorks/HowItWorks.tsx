@@ -8,6 +8,10 @@ import { CREATOR_COLUMN, TRAVELER_COLUMN } from "./data";
 
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 
+// Creators column starts its reveal sequence slightly after the Travelers
+// column's, so the two feel choreographed rather than simultaneous.
+const CREATORS_START_DELAY_MS = 220;
+
 export const HowItWorks = () => {
   const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>(
     0,
@@ -25,7 +29,11 @@ export const HowItWorks = () => {
         className="text-title font-body pb-20 pl-6 font-normal tracking-wide"
       />
       <div className="relative flex flex-col justify-between gap-16 lg:flex-row lg:items-start lg:gap-12">
-        <HowItWorksColumn {...TRAVELER_COLUMN} className="lg:flex-1" />
+        <HowItWorksColumn
+          {...TRAVELER_COLUMN}
+          className="lg:flex-1"
+          active={hasEntered}
+        />
         {/* Divider spans only the middle stretch between the two columns'
             midpoints — its offsets are derived from the lg:mt-56 stagger
             below, not tied to either column's actual content height. */}
@@ -35,7 +43,12 @@ export const HowItWorks = () => {
         />
         {/* Starts roughly a third into the travelers column so the two
             steps lists read as staggered rather than aligned. */}
-        <HowItWorksColumn {...CREATOR_COLUMN} className="lg:mt-125 lg:flex-1" />
+        <HowItWorksColumn
+          {...CREATOR_COLUMN}
+          className="lg:mt-125 lg:flex-1"
+          active={hasEntered}
+          startDelayMs={CREATORS_START_DELAY_MS}
+        />
       </div>
     </section>
   );
