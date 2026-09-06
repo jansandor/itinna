@@ -1,7 +1,8 @@
 "use client";
 
-import { RevealText, TravelFeedCard } from "@/components";
+import { RevealText } from "@/components";
 import { useInViewOnce } from "@/hooks";
+import { FeedStack } from "./components";
 
 const SWEEP_TRIGGER_ROOT_MARGIN = "0px 0px -75% 0px";
 
@@ -21,7 +22,9 @@ const FEED_CARD = {
   saves: "4.8K",
 };
 
-const FEED_CARD_IDS = ["card-1", "card-2", "card-3", "card-4", "card-5"];
+const FEED_CARDS = ["card-1", "card-2", "card-3", "card-4", "card-5"].map(
+  (id) => Object.assign({ id }, FEED_CARD),
+);
 
 export const FinalCta = () => {
   const [sectionRef, hasEntered] = useInViewOnce<HTMLElement>(
@@ -39,11 +42,7 @@ export const FinalCta = () => {
         active={hasEntered}
         className="text-title font-body pb-9 pl-6 font-normal tracking-wide"
       />
-      <div className="flex flex-col items-center gap-20 py-24">
-        {FEED_CARD_IDS.map((id) => (
-          <TravelFeedCard key={id} {...FEED_CARD} />
-        ))}
-      </div>
+      <FeedStack cards={FEED_CARDS} />
     </section>
   );
 };
