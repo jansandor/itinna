@@ -18,7 +18,7 @@ export const OutlineCard = ({
 }: OutlineCardProps) => {
   return (
     <div
-      className={`flex items-center gap-4 rounded-2xl border border-white/40 bg-transparent px-6 py-5 ${className}`}
+      className={`flex items-center gap-4 rounded-2xl border border-white/35 bg-transparent px-6 py-5 ${className}`}
     >
       {icon}
       <div className="flex flex-col gap-0.5">
