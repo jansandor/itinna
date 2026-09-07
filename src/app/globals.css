@@ -75,7 +75,6 @@
 }
 
 @keyframes hero-chevron-fade {
-
   0%,
   100% {
     opacity: 0.15;
@@ -89,7 +88,6 @@
 /* Brightens to full white then settles back to white/80 — a single pulse
  * used with a per-word animation-delay stagger to read as one light sweep. */
 @keyframes explore-word-sweep {
-
   0%,
   100% {
     color: rgb(255 255 255 / 0.8);
@@ -104,7 +102,6 @@
  * to OutlineCard's muted white/65 subtitle so the rest state doesn't snap
  * to a brighter color before the hover animation plays. */
 @keyframes outline-subtitle-sweep {
-
   0%,
   100% {
     color: rgb(255 255 255 / 0.65);
