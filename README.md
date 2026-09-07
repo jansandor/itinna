@@ -153,7 +153,7 @@ Protože by tato sekce obsahovala jen titulek a podtitulek (pro konzistenci) a p
 
 Pod titulkem a podtitulkem sekce se nachází 5 vertikálních, velkých video karet. Vlastně tím jakoby začíná "Rexby style, Triptok marketplace timeline / feed". Přijde mi to dobré, protože návštěvníkovi hned ukážeme, co může mít, osahá si to a ochutná "marketplace". Lepší než suchý CTA button.
 
-Chování scrollu se od první karty změní a návštěvník nemusí scrollovat kartu do viewportu ručně - jakmile je první karta ve viewportu, další scroll dolů zafunguje jako trigger a automaticky se scroll dokončí tak, aby byla celá další karta ve viewportu. Scroll nahoru a dolů pak vlastně přepíná mezi kartami / posty / marketplace itemy.
+Chování scrollu se od první karty změní a návštěvník nemusí scrollovat kartu do viewportu ručně - jakmile je první karta ve viewportu, další scroll dolů zafunguje jako trigger a automaticky se scroll dokončí tak, aby byla celá další karta ve viewportu. Scroll nahoru a dolů pak vlastně přepíná mezi kartami / posty / marketplace itemy. Stejně na desktopu funguje i Rexby Triptok.
 
 Je k diskuzi, jestli pod poslední kartu dát CTA "Explore guides" nebo načítat další náhodně vybrané guides (plynulý přechod do timeline stylu z informativní homepage) nebo na další scroll dolů na poslední kartě udělat přímo redirect na Explore guides stránku (marketplace), což ale nemusí být úplně user friendly.
 
