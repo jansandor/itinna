@@ -43,7 +43,14 @@ export const TravelFeedCard = ({
 }: TravelFeedCardProps) => {
   return (
     <div
-      className={`relative aspect-9/16 w-full max-w-200 overflow-hidden rounded-[2.5rem] ${className}`}
+      // Width scales with the viewport on every axis: the 800px cap
+      // preserves the original size once the viewport is tall enough, and
+      // the calc() term caps height at (100vh - 128px) so it never exceeds
+      // the viewport at any zoom level (128px covers the slide's own 96px
+      // of py-12 padding plus a little extra slack) while staying much
+      // closer to full size than a fixed vh fraction would on typical
+      // screens.
+      className={`relative aspect-9/16 w-[min(800px,calc((100vh_-_128px)*0.5625),100%)] overflow-hidden rounded-[2.5rem] ${className}`}
     >
       {videoSrc ? (
         <video
