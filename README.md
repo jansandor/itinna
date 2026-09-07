@@ -89,7 +89,7 @@ Zacíleno na Cestovatele i Tvůrce.
 
 Nastiňuje oběma cílovým skupinám jak Itinna pro každou z nich funguje.
 
-Sekce obsahuje dva sloupce For Travelers a For Creators asymetricky vertikálně posunuté, aby flow stránky zleva doprava a shora dolů nejprve nabídla info cestovatelům a behěm chvíle i tvůrcům, ale ne vedle sebe, aby to celkově působilo vzdušně a elementz si vzájemně nekradli pozornost návštěvníka. Sloupce a položky seznamů se objevují postupně podobně jako obsah sekce Explore.
+Sekce obsahuje dva sloupce For Travelers a For Creators asymetricky vertikálně posunuté, aby flow stránky zleva doprava a shora dolů nejprve nabídla info cestovatelům a behěm chvíle i tvůrcům, ale ne vedle sebe, aby to celkově působilo vzdušně a elementy si vzájemně nekradly pozornost návštěvníka. Sloupce a položky seznamů se objevují postupně podobně jako obsah sekce Explore.
 
 Hover přes kartičky spouští decentní light sweep efekt přes drobný, světlejší text, aby i tato sekce poskytla nějakou vtahující interaktivitu, jelikož neobsahuje žádný výraznější grafický element / obrázek.
 
@@ -101,7 +101,7 @@ Zacíleno na Tvůrce.
 
 Vysvětluje stručně přidanou hodnotu Itinna pro tvůrce.
 
-Možnost přidat CTA "Create guide" -> registrace nebo dokonce nechat návštěvníka projít si flow pro přidání guide a na konci, abz proces mohl dokončit vynutit registraci - návštěvník si tak už zkusí na vlastní kůži, jak to funguje a protože už do tvorby guide vloží úsilí, bude mít daleko větší motivaci se na konci flow registrovat, aby neztratil investici.
+Možnost přidat CTA "Create guide" -> registrace nebo dokonce nechat návštěvníka projít si flow pro přidání guide a na konci, aby proces mohl dokončit, vynutit registraci - návštěvník si tak už zkusí na vlastní kůži, jak to funguje a protože už do tvorby guide vloží úsilí, bude mít daleko větší motivaci se na konci flow registrovat, aby neztratil investici.
 
 ## Reviews
 
@@ -112,6 +112,8 @@ Zacíleno na Cestovatele i Tvůrce.
 Designově bych zase zkusil glass efekt - 3 karty.
 
 Tato sekce je k diskuzi, jestli ano / ne.
+
+Nakonec jsem ji implementoval, ale střídmě a glass efekt zde na černém pozadí moc nefunguje.
 
 ## KPIs
 
@@ -125,25 +127,41 @@ Pokud by byly, dal bych asi max 3 karty:
 
 Design outline bílá, čáry, číslo - jednoduše, nenápadně, decentně. Nic křiklavého.
 
+Pro teď neimplementováno - za mě k diskuzi, působí to dost SaaSově.
+
 ## Get The App
 
 Odpovídá na otázku "Jak to můžu získat?".
 
 Zacíleno na Cestovatele i Tvůrce.
 
-Sekce čistě s odkazy na stažení. Title a subtitle, pokud vůbec (ať je to konzistentní napříč page)
+Sekce čistě s odkazy na stažení. Title a subtitle, pokud vůbec (ať je to konzistentní napříč page).
 
-## Final CTA
+Mobilní aplikace momentálně není, takže neimplementováno, jen uvažováno pro budoucnost.
+
+## Final CTA - "Where will you go next?"
 
 Odpovídá na otázku "Co dál? Kam pojedu?".
 
 Zacíleno na Cestovatele i Tvůrce.
 
-Call to action otevřít marketplace.
+Titulek a podtitulek má vybízet k akci, motivovat k výběru guide.
+
+Na konci sekce možnost CTA "otevřít marketplace" (Explore guides page).
+
+Protože by tato sekce obsahovala jen titulek a podtitulek (pro konzistenci) a pravděpodobně jen CTA "Explore guides", rozhodnul jsem se to udělat víc "catchy".
+
+Pod titulkem a podtitulkem sekce se nachází 5 vertikálních, velkých video karet. Vlastně tím jakoby začíná "Rexby style, Triptok marketplace timeline / feed". Přijde mi to dobré, protože návštěvníkovi hned ukážeme, co může mít, osahá si to a ochutná "marketplace". Lepší než suchý CTA button.
+
+Chování scrollu se od první karty změní a návštěvník nemusí scrollovat kartu do viewportu ručně - jakmile je první karta ve viewportu, další scroll dolů zafunguje jako trigger a automaticky se scroll dokončí tak, aby byla celá další karta ve viewportu. Scroll nahoru a dolů pak vlastně přepíná mezi kartami / posty / marketplace itemy.
+
+Je k diskuzi, jestli pod poslední kartu dát CTA "Explore guides" nebo načítat další náhodně vybrané guides (plynulý přechod do timeline stylu z informativní homepage) nebo na další scroll dolů na poslední kartě udělat přímo redirect na Explore guides stránku (marketplace), což ale nemusí být úplně user friendly.
 
 ## Footer
 
 Klasika.
+
+Doplnily by se další potřebné údaje, kontakt, socials apod.
 
 # How to run project
 
