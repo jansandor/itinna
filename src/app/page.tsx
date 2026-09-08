@@ -14,8 +14,6 @@ export default async function HomePage() {
       <Hero />
       <main className="mx-auto flex w-full max-w-7xl flex-col">
         <Explore />
-        {/* // TODO tell them */}
-        {/* <MeetCreators /> */}
         <HowItWorks />
         <ForCreators />
         <Reviews />
