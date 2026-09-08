@@ -165,7 +165,7 @@ Doplnily by se další potřebné údaje, kontakt, socials apod.
 
 # How to run project
 
-Copy content of [CONTENT LINK G-DRIVE](<>) to the project root folder to add videos and images.
+Copy content of [Assets for homepage](https://www.uschovna.cz/zasilka/WOTBU3D5IIBFA48S-KKC/) to the project root folder to add videos and images (images folder must be under `<projectRoot>/public`).
 
 Run the development server:
 
