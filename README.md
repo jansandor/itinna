@@ -178,6 +178,10 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+# Linting and formatting
+
+Oxlint + Prettier
+
 ```bash
 pnpm lint
 pnpm lint:fix
